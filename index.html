@@ -27,11 +27,14 @@
         .app-header h1 {
             font-size: 28px;
             font-weight: 700;
+            letter-spacing: 1px;
+            color: #1e293b;
+        }
+        .app-header h1 .title-text {
             background: linear-gradient(145deg, #1e293b, #334155);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: 1px;
         }
         .app-header .sub {
             font-size: 14px;
@@ -506,6 +509,17 @@
             margin-top: 4px;
         }
 
+        /* ===== 落款 ===== */
+        .footer {
+            text-align: center;
+            padding: 14px 0 4px;
+            color: #b0b8c4;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #e9edf4;
+            margin-top: 8px;
+        }
+
         /* ===== 响应式 ===== */
         @media (max-width: 420px) {
             .dice-btn {
@@ -643,6 +657,9 @@
         </div>
     </div>
 
+    <!-- 落款 -->
+    <footer class="footer">— Designed by BY —</footer>
+
     <script>
         // ============================================================
         //  核心逻辑（二项分布概率 + 建议）
@@ -738,7 +755,6 @@
             playerCount = parseInt(document.getElementById('playerCount').value);
             dicePerPlayer = parseInt(document.getElementById('diceCount').value);
             wildOnes = document.getElementById('wildOnes').value === 'true';
-            // 重新初始化骰子
             if (myDice.length !== dicePerPlayer) {
                 myDice = new Array(dicePerPlayer).fill(0);
                 renderDice();
@@ -763,7 +779,6 @@
                 f = Math.max(1, Math.min(6, f));
                 bidFaceInput.value = f;
             }
-            // 更新步进按钮状态
             document.getElementById('countUp').disabled = c >= totalDice;
             document.getElementById('countDown').disabled = c <= 1;
             document.getElementById('faceUp').disabled = f >= 6;
@@ -1073,12 +1088,10 @@
         //  事件绑定
         // ============================================================
 
-        // 设置变更
         document.getElementById('playerCount').addEventListener('change', updateSettings);
         document.getElementById('diceCount').addEventListener('change', updateSettings);
         document.getElementById('wildOnes').addEventListener('change', updateSettings);
 
-        // 骰子操作
         document.getElementById('clearDiceBtn').addEventListener('click', function() {
             myDice = new Array(dicePerPlayer).fill(0);
             renderDice();
@@ -1090,7 +1103,6 @@
             if (hasAnyDice()) analyze(); else resetResult();
         });
 
-        // 叫骰输入
         bidCountInput.addEventListener('change', function() { clampBidInputs(); if (hasAnyDice()) analyze(); });
         bidFaceInput.addEventListener('change', function() { clampBidInputs(); if (hasAnyDice()) analyze(); });
         document.getElementById('countUp').addEventListener('click', function() {
@@ -1110,7 +1122,6 @@
             analyze();
         });
 
-        // 模式切换
         document.getElementById('modeOpponent').addEventListener('click', function() {
             bidMode = 'opponent';
             document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
@@ -1133,7 +1144,6 @@
             updateOpponentHint();
         });
 
-        // 折叠面板
         document.getElementById('statsHeader').addEventListener('click', function() {
             const body = document.getElementById('statsBody');
             const chevron = document.getElementById('statsChevron');
@@ -1172,7 +1182,6 @@
             renderMyRecord();
             clampBidInputs();
             resetResult();
-            // 默认显示对手模式
             opponentSelectRow.style.display = 'flex';
             document.getElementById('modeOpponent').classList.add('active');
         }
@@ -1180,8 +1189,5 @@
         init();
         console.log('🎲 大话骰 · 赢面助手已启动');
     </script>
-    
-<footer class="footer" style="text-align:center;padding:16px 0 8px;color:#9ca3af;font-size:13px;letter-spacing:0.5px;border-top:1px solid #e9edf4;margin-top:8px;">— Designed by BY —</footer>
-
 </body>
 </html>
