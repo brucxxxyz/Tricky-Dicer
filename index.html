@@ -26,7 +26,6 @@
             margin-bottom: 20px;
             padding-bottom: 12px;
             border-bottom: 2px solid #e9edf4;
-            position: relative;
         }
         .app-header h1 {
             font-size: 28px;
@@ -45,23 +44,6 @@
             color: #64748b;
             margin-top: 2px;
         }
-        .mode-switch {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 5px 12px;
-            border-radius: 16px;
-            border: 1px solid #d1d9e6;
-            background: #ffffff;
-            color: #475569;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.15s;
-            font-family: inherit;
-        }
-        .mode-switch:hover { background: #f1f5f9; border-color: #94a3b8; }
-        .mode-switch:active { transform: scale(0.94); }
 
         /* ===== 卡片 ===== */
         .card {
@@ -161,6 +143,13 @@
             border-color: #3b82f6;
             background: #eff6ff;
             box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+        }
+        .dice-btn .clear-btn {
+            font-size: 12px;
+            color: #94a3b8;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
 
         .dice-actions {
@@ -412,7 +401,7 @@
             background: #fffbeb;
         }
 
-        /* ===== 折叠面板 ===== */
+        /* ===== 折叠面板（战绩&对手） ===== */
         .collapsible {
             margin-top: 4px;
         }
@@ -534,147 +523,6 @@
             margin-top: 8px;
         }
 
-        /* ===== 极简模式专属 ===== */
-        #minimalMode {
-            display: none;
-        }
-        .minimal-tip {
-            font-size: 13px;
-            color: #64748b;
-            text-align: center;
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-        .minimal-strategy-modes {
-            display: flex;
-            gap: 6px;
-            margin: 4px 0;
-        }
-        .strategy-btn {
-            flex: 1;
-            padding: 10px 4px;
-            border-radius: 12px;
-            border: 2px solid #e2e8f0;
-            background: #f8fafc;
-            cursor: pointer;
-            transition: 0.15s;
-            font-family: inherit;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-        }
-        .strategy-btn .s-icon {
-            font-size: 18px;
-        }
-        .strategy-btn .s-name {
-            font-size: 13px;
-            font-weight: 700;
-            color: #475569;
-        }
-        .strategy-btn .s-desc {
-            font-size: 10px;
-            color: #94a3b8;
-        }
-        .strategy-btn:active { transform: scale(0.96); }
-        .strategy-btn.active {
-            border-color: #3b82f6;
-            background: #eff6ff;
-        }
-        .strategy-btn.active .s-name { color: #1e40af; }
-        .strategy-btn.active .s-desc { color: #3b82f6; }
-
-        .result-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 4px;
-        }
-        .result-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 14px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            background: #f8fafc;
-            transition: 0.15s;
-        }
-        .result-item.best {
-            border-color: #3b82f6;
-            background: #eff6ff;
-            box-shadow: 0 0 0 3px rgba(59,130,246,0.08);
-        }
-        .result-item .r-emoji {
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-        .result-item .r-info {
-            flex: 1;
-            min-width: 0;
-        }
-        .result-item .r-label {
-            font-size: 11px;
-            color: #94a3b8;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-        .result-item .r-action {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-top: 2px;
-        }
-        .result-item .r-pct {
-            font-size: 20px;
-            font-weight: 800;
-            font-family: "SF Mono", monospace;
-            flex-shrink: 0;
-        }
-        .result-item .r-pct.safe { color: #22c55e; }
-        .result-item .r-pct.medium { color: #f59e0b; }
-        .result-item .r-pct.danger { color: #ef4444; }
-
-        .minimal-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        .minimal-actions button {
-            flex: 1;
-            padding: 12px 0;
-            border-radius: 12px;
-            border: none;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: 0.15s;
-            font-family: inherit;
-        }
-        .minimal-actions button:active { transform: scale(0.96); }
-        .ma-apply {
-            background: #3b82f6;
-            color: #fff;
-        }
-        .ma-apply:hover { background: #2563eb; }
-        .ma-apply:disabled {
-            background: #cbd5e1;
-            cursor: not-allowed;
-        }
-        .ma-detail {
-            background: #e2e8f0;
-            color: #1e293b;
-        }
-        .ma-detail:hover { background: #cbd5e1; }
-
-        .bid-display {
-            font-size: 22px;
-            font-weight: 800;
-            color: #1e293b;
-            font-family: "SF Mono", monospace;
-        }
-
         /* ===== 响应式 ===== */
         @media (max-width: 420px) {
             .dice-btn {
@@ -684,9 +532,6 @@
             }
             .result-pct { font-size: 28px; }
             .bid-group input[type="number"] { width: 48px; }
-            .mode-switch { font-size: 11px; padding: 4px 10px; }
-            .result-item .r-action { font-size: 14px; }
-            .result-item .r-pct { font-size: 17px; }
         }
         @media (max-width: 360px) {
             .dice-btn {
@@ -696,7 +541,6 @@
             }
             .settings-row { font-size: 13px; }
             .settings-row select { padding: 4px 6px; }
-            .mode-switch { font-size: 10px; padding: 4px 8px; }
         }
     </style>
 </head>
@@ -707,208 +551,113 @@
             <span>🎲</span>
             <span class="title-text">大话骰 · 赢面助手</span>
         </h1>
-        <div class="sub" id="headerSub">输入你的骰子，评估叫骰胜率</div>
-        <button class="mode-switch" id="modeSwitch">⚡ 极简模式</button>
+        <div class="sub">输入你的骰子，评估叫骰胜率</div>
     </header>
 
-    <!-- ============================================ -->
-    <!-- =========== 正常模式（原有全部内容） ========= -->
-    <!-- ============================================ -->
-    <div id="normalMode">
-
-        <!-- 设置 -->
-        <div class="card">
-            <div class="card-title">
-                <span>⚙️ 游戏设置</span>
-            </div>
-            <div class="settings-row">
-                <label>👥 <select id="playerCount">
-                    <option value="2">2人</option><option value="3">3人</option>
-                    <option value="4" selected>4人</option>
-                    <option value="5">5人</option><option value="6">6人</option>
-                    <option value="7">7人</option><option value="8">8人</option>
-                </select></label>
-                <label>🎲 <select id="diceCount">
-                    <option value="3">3骰</option><option value="4">4骰</option>
-                    <option value="5" selected>5骰</option><option value="6">6骰</option>
-                </select></label>
-                <label>1通配 <select id="wildOnes">
-                    <option value="true" selected>是</option><option value="false">否</option>
-                </select></label>
-            </div>
+    <!-- 设置 -->
+    <div class="card">
+        <div class="card-title">
+            <span>⚙️ 游戏设置</span>
         </div>
-
-        <!-- 我的骰子 -->
-        <div class="card">
-            <div class="card-title">
-                <span>🎯 我的骰子</span>
-                <span class="badge" id="diceCountBadge">0 / 5</span>
-            </div>
-            <div class="dice-grid" id="diceGrid"></div>
-            <div class="dice-actions">
-                <button id="clearDiceBtn">清空</button>
-                <button id="randomDiceBtn">随机</button>
-            </div>
+        <div class="settings-row">
+            <label>👥 <select id="playerCount">
+                <option value="2">2人</option><option value="3">3人</option>
+                <option value="4" selected>4人</option>
+                <option value="5">5人</option><option value="6">6人</option>
+                <option value="7">7人</option><option value="8">8人</option>
+            </select></label>
+            <label>🎲 <select id="diceCount">
+                <option value="3">3骰</option><option value="4">4骰</option>
+                <option value="5" selected>5骰</option><option value="6">6骰</option>
+            </select></label>
+            <label>1通配 <select id="wildOnes">
+                <option value="true" selected>是</option><option value="false">否</option>
+            </select></label>
         </div>
-
-        <!-- 叫骰评估 -->
-        <div class="card">
-            <div class="card-title">
-                <span>📊 叫骰评估</span>
-            </div>
-            <div class="mode-toggle">
-                <button class="mode-btn active" id="modeOpponent" data-mode="opponent">对方叫的，我该开吗</button>
-                <button class="mode-btn" id="modeMine" data-mode="mine">我准备这么叫，安全吗</button>
-            </div>
-
-            <div class="bid-row">
-                <div class="bid-group">
-                    <label>数量</label>
-                    <input type="number" id="bidCount" value="3" min="1" max="40">
-                    <div class="stepper">
-                        <button id="countUp">▲</button>
-                        <button id="countDown">▼</button>
-                    </div>
-                </div>
-                <div class="bid-group">
-                    <label>点数</label>
-                    <input type="number" id="bidFace" value="4" min="1" max="6">
-                    <div class="stepper">
-                        <button id="faceUp">▲</button>
-                        <button id="faceDown">▼</button>
-                    </div>
-                </div>
-                <button class="mini-btn" id="analyzeBtn" style="background:#3b82f6;color:#fff;border:none;padding:6px 16px;">计算</button>
-            </div>
-
-            <div class="opponent-row" id="opponentSelectRow">
-                <label>叫骰的是</label>
-                <select id="opponentSelect"><option value="">未指定</option></select>
-            </div>
-            <div class="error-msg" id="errorMsg"></div>
-
-            <div class="result-area">
-                <div class="result-pct medium" id="resultPct">—</div>
-                <div class="result-label" id="resultLabel">等待计算</div>
-            </div>
-            <button class="advice-btn uncertain" id="adviceBtn" disabled>输入骰子后计算</button>
-            <div class="advice-detail" id="adviceDetail"></div>
-            <div class="opponent-hint" id="opponentHint"></div>
-            <div class="log-row" id="logRow">
-                <button class="log-btn bluff" id="logBluff">✅ 对方虚张 · 我赢了</button>
-                <button class="log-btn honest" id="logHonest">❌ 对方老实 · 我输了</button>
-            </div>
-            <div class="next-bid-row" id="nextBidRow"></div>
-            <div class="quick-stats" id="quickStats"></div>
-        </div>
-
-        <!-- 战绩 & 对手习惯（折叠） -->
-        <div class="card collapsible">
-            <div class="collapsible-header" id="statsHeader">
-                <span>📈 我的战绩 &amp; 对手习惯</span>
-                <span class="chevron" id="statsChevron">▸</span>
-            </div>
-            <div class="collapsible-body" id="statsBody">
-                <div class="my-record">
-                    <span>我的战绩：</span>
-                    <span class="record-text" id="myRecordText">暂无</span>
-                    <button class="mini-btn danger" id="resetRecordBtn">重置</button>
-                </div>
-                <div class="opponent-add">
-                    <input type="text" id="newOpponentName" placeholder="添加玩家昵称" maxlength="12">
-                    <button class="mini-btn" id="addOpponentBtn" style="background:#3b82f6;color:#fff;border:none;">添加</button>
-                </div>
-                <div class="opponent-list" id="opponentList"></div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- ============================================ -->
-    <!-- =========== 极简模式 ====================== -->
-    <!-- ============================================ -->
-    <div id="minimalMode">
+    <!-- 我的骰子 -->
+    <div class="card">
+        <div class="card-title">
+            <span>🎯 我的骰子</span>
+            <span class="badge" id="diceCountBadge">0 / 5</span>
+        </div>
+        <div class="dice-grid" id="diceGrid"></div>
+        <div class="dice-actions">
+            <button id="clearDiceBtn">清空</button>
+            <button id="randomDiceBtn">随机</button>
+        </div>
+    </div>
 
-        <!-- 我的骰子 -->
-        <div class="card">
-            <div class="card-title">
-                <span>🎯 我的骰子</span>
-                <span class="badge" id="mDiceCountBadge">0 / 5</span>
-            </div>
-            <div class="dice-grid" id="mDiceGrid"></div>
-            <div class="dice-actions">
-                <button id="mClearDiceBtn">清空</button>
-                <button id="mRandomDiceBtn">随机</button>
-            </div>
+    <!-- 叫骰评估 -->
+    <div class="card">
+        <div class="card-title">
+            <span>📊 叫骰评估</span>
+        </div>
+        <div class="mode-toggle">
+            <button class="mode-btn active" id="modeOpponent" data-mode="opponent">对方叫的，我该开吗</button>
+            <button class="mode-btn" id="modeMine" data-mode="mine">我准备这么叫，安全吗</button>
         </div>
 
-        <!-- 当前叫骰 -->
-        <div class="card">
-            <div class="card-title">
-                <span>📢 当前叫骰</span>
-            </div>
-            <div class="minimal-tip">输入目前场上已叫到的骰数</div>
-            <div class="bid-row">
-                <div class="bid-group">
-                    <label>数量</label>
-                    <input type="number" id="mBidCount" value="3" min="1" max="40">
-                    <div class="stepper">
-                        <button id="mCountUp">▲</button>
-                        <button id="mCountDown">▼</button>
-                    </div>
-                </div>
-                <div class="bid-group">
-                    <label>点数</label>
-                    <input type="number" id="mBidFace" value="4" min="1" max="6">
-                    <div class="stepper">
-                        <button id="mFaceUp">▲</button>
-                        <button id="mFaceDown">▼</button>
-                    </div>
+        <div class="bid-row">
+            <div class="bid-group">
+                <label>数量</label>
+                <input type="number" id="bidCount" value="3" min="1" max="40">
+                <div class="stepper">
+                    <button id="countUp">▲</button>
+                    <button id="countDown">▼</button>
                 </div>
             </div>
-            <div class="minimal-tip" style="margin-top:10px;">
-                <span class="bid-display" id="mBidDisplay">3 个 4 点</span>
+            <div class="bid-group">
+                <label>点数</label>
+                <input type="number" id="bidFace" value="4" min="1" max="6">
+                <div class="stepper">
+                    <button id="faceUp">▲</button>
+                    <button id="faceDown">▼</button>
+                </div>
             </div>
+            <button class="mini-btn" id="analyzeBtn" style="background:#3b82f6;color:#fff;border:none;padding:6px 16px;">计算</button>
         </div>
 
-        <!-- 策略模式 -->
-        <div class="card">
-            <div class="card-title">
-                <span>🎮 策略模式</span>
-            </div>
-            <div class="minimal-strategy-modes">
-                <button class="strategy-btn active" data-strategy="sage">
-                    <span class="s-icon">🛡</span>
-                    <span class="s-name">贤者</span>
-                    <span class="s-desc">安全优先</span>
-                </button>
-                <button class="strategy-btn" data-strategy="saint">
-                    <span class="s-icon">⚔</span>
-                    <span class="s-name">圣人</span>
-                    <span class="s-desc">冒险×胜率</span>
-                </button>
-                <button class="strategy-btn" data-strategy="split">
-                    <span class="s-icon">🎯</span>
-                    <span class="s-name">劈</span>
-                    <span class="s-desc">开牌优先</span>
-                </button>
-            </div>
+        <div class="opponent-row" id="opponentSelectRow">
+            <label>叫骰的是</label>
+            <select id="opponentSelect"><option value="">未指定</option></select>
         </div>
+        <div class="error-msg" id="errorMsg"></div>
 
-        <!-- 推荐结果 -->
-        <div class="card">
-            <div class="card-title">
-                <span>💡 推荐操作</span>
-                <span class="badge" id="mStrategyLabel">贤者模式</span>
-            </div>
-            <div class="result-list" id="mResultList">
-                <div class="minimal-tip">选择骰子后自动计算</div>
-            </div>
-            <div class="minimal-actions">
-                <button class="ma-apply" id="mApplyBtn" disabled>📋 应用到叫骰</button>
-            </div>
+        <div class="result-area">
+            <div class="result-pct medium" id="resultPct">—</div>
+            <div class="result-label" id="resultLabel">等待计算</div>
         </div>
+        <button class="advice-btn uncertain" id="adviceBtn" disabled>输入骰子后计算</button>
+        <div class="advice-detail" id="adviceDetail"></div>
+        <div class="opponent-hint" id="opponentHint"></div>
+        <div class="log-row" id="logRow">
+            <button class="log-btn bluff" id="logBluff">✅ 对方虚张 · 我赢了</button>
+            <button class="log-btn honest" id="logHonest">❌ 对方老实 · 我输了</button>
+        </div>
+        <div class="next-bid-row" id="nextBidRow"></div>
+        <div class="quick-stats" id="quickStats"></div>
+    </div>
 
+    <!-- 战绩 & 对手习惯（折叠） -->
+    <div class="card collapsible">
+        <div class="collapsible-header" id="statsHeader">
+            <span>📈 我的战绩 &amp; 对手习惯</span>
+            <span class="chevron" id="statsChevron">▸</span>
+        </div>
+        <div class="collapsible-body" id="statsBody">
+            <div class="my-record">
+                <span>我的战绩：</span>
+                <span class="record-text" id="myRecordText">暂无</span>
+                <button class="mini-btn danger" id="resetRecordBtn">重置</button>
+            </div>
+            <div class="opponent-add">
+                <input type="text" id="newOpponentName" placeholder="添加玩家昵称" maxlength="12">
+                <button class="mini-btn" id="addOpponentBtn" style="background:#3b82f6;color:#fff;border:none;">添加</button>
+            </div>
+            <div class="opponent-list" id="opponentList"></div>
+        </div>
     </div>
 
     <!-- 落款 -->
@@ -916,79 +665,22 @@
 
     <script>
         // ============================================================
-        //  全局共享状态
+        //  核心逻辑（二项分布概率 + 建议）
         // ============================================================
+
+        // ----- 状态 -----
         let playerCount = 4;
         let dicePerPlayer = 5;
         let wildOnes = true;
-
-        // 正常模式状态
         let myDice = [];
         let currentBid = { count: 3, face: 4 };
-        let bidMode = 'opponent';
+        let bidMode = 'opponent'; // 'opponent' | 'mine'
         let selectedOpponentId = null;
         let myRecord = { wins: 0, losses: 0 };
         let opponents = [];
         let nextOpponentId = 1;
 
-        // 极简模式状态
-        let minimalDice = [];
-        let minimalBid = { count: 3, face: 4 };
-        let minimalStrategy = 'sage'; // 'sage' | 'saint' | 'split'
-        let currentRecommendation = null;
-
-        const FACE_ICONS = { 1:'⚀', 2:'⚁', 3:'⚂', 4:'⚃', 5:'⚄', 6:'⚅' };
-
-        // ============================================================
-        //  通用工具函数
-        // ============================================================
-        function binom(n, k) {
-            if (k < 0 || k > n) return 0;
-            if (k === 0 || k === n) return 1;
-            k = Math.min(k, n - k);
-            let res = 1;
-            for (let i = 0; i < k; i++) res *= (n - i) / (i + 1);
-            return res;
-        }
-
-        function escapeHtml(str) {
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
-        }
-
-        // 计算给定叫骰的概率
-        function calcProbability(bid, myDiceArr) {
-            const totalDice = playerCount * dicePerPlayer;
-            const knownCounts = {};
-            for (let f = 1; f <= 6; f++) knownCounts[f] = 0;
-            myDiceArr.forEach(v => { if (v > 0) knownCounts[v]++; });
-            const knownDiceCount = myDiceArr.filter(v => v > 0).length;
-            const unknownCount = totalDice - knownDiceCount;
-            const targetFace = bid.face;
-            const targetIsWildable = wildOnes && targetFace !== 1;
-            let alreadyHave = knownCounts[targetFace] || 0;
-            if (targetIsWildable) alreadyHave += knownCounts[1] || 0;
-            const needed = bid.count - alreadyHave;
-
-            if (needed <= 0) return { probability: 1.0, totalDice, unknownCount, alreadyHave, needed, targetIsWildable };
-            if (needed > unknownCount) return { probability: 0, totalDice, unknownCount, alreadyHave, needed, targetIsWildable };
-
-            const pSingle = targetIsWildable ? 2 / 6 : 1 / 6;
-            let probLess = 0;
-            for (let k = 0; k < needed; k++) {
-                probLess += binom(unknownCount, k) * Math.pow(pSingle, k) * Math.pow(1 - pSingle, unknownCount - k);
-            }
-            return {
-                probability: Math.max(0, Math.min(1, 1 - probLess)),
-                totalDice, unknownCount, alreadyHave, needed, targetIsWildable
-            };
-        }
-
-        // ============================================================
-        //  ============ 正常模式逻辑 ============
-        // ============================================================
-
+        // ----- DOM 引用 -----
         const diceGrid = document.getElementById('diceGrid');
         const bidCountInput = document.getElementById('bidCount');
         const bidFaceInput = document.getElementById('bidFace');
@@ -1010,6 +702,27 @@
         const newOpponentName = document.getElementById('newOpponentName');
         const diceCountBadge = document.getElementById('diceCountBadge');
 
+        const FACE_ICONS = { 1:'⚀', 2:'⚁', 3:'⚂', 4:'⚃', 5:'⚄', 6:'⚅' };
+
+        // ----- 工具函数 -----
+        function binom(n, k) {
+            if (k < 0 || k > n) return 0;
+            if (k === 0 || k === n) return 1;
+            k = Math.min(k, n - k);
+            let res = 1;
+            for (let i = 0; i < k; i++) {
+                res *= (n - i) / (i + 1);
+            }
+            return res;
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // ----- 骰子渲染 -----
         function renderDice() {
             let html = '';
             for (let i = 0; i < dicePerPlayer; i++) {
@@ -1036,8 +749,11 @@
             diceCountBadge.textContent = `${filled} / ${dicePerPlayer}`;
         }
 
-        function hasAnyDice() { return myDice.some(v => v > 0); }
+        function hasAnyDice() {
+            return myDice.some(v => v > 0);
+        }
 
+        // ----- 设置更新 -----
         function updateSettings() {
             playerCount = parseInt(document.getElementById('playerCount').value);
             dicePerPlayer = parseInt(document.getElementById('diceCount').value);
@@ -1048,19 +764,11 @@
             } else {
                 renderDice();
             }
-            // 同步极简模式骰子
-            if (minimalDice.length !== dicePerPlayer) {
-                minimalDice = new Array(dicePerPlayer).fill(0);
-                renderMinimalDice();
-            } else {
-                renderMinimalDice();
-            }
             clampBidInputs();
-            clampMinimalBidInputs();
             if (hasAnyDice()) analyze(); else resetResult();
-            analyzeMinimal();
         }
 
+        // ----- 叫骰输入步进 -----
         function clampBidInputs() {
             const totalDice = playerCount * dicePerPlayer;
             bidCountInput.max = totalDice;
@@ -1089,10 +797,45 @@
             if (hasAnyDice()) analyze();
         }
 
+        // ----- 概率计算 -----
         function calculateProbability() {
-            return calcProbability(currentBid, myDice);
+            const totalDice = playerCount * dicePerPlayer;
+            const knownCounts = {};
+            for (let f = 1; f <= 6; f++) knownCounts[f] = 0;
+            myDice.forEach(v => { if (v > 0) knownCounts[v]++; });
+            const knownDiceCount = myDice.filter(v => v > 0).length;
+            const unknownCount = totalDice - knownDiceCount;
+            const targetFace = currentBid.face;
+            const targetIsWildable = wildOnes && targetFace !== 1;
+            let alreadyHave = knownCounts[targetFace] || 0;
+            if (targetIsWildable) {
+                alreadyHave += knownCounts[1] || 0;
+            }
+            const needed = currentBid.count - alreadyHave;
+
+            if (needed <= 0) {
+                return { probability: 1.0, totalDice, unknownCount, alreadyHave, needed, targetIsWildable };
+            }
+            if (needed > unknownCount) {
+                return { probability: 0, totalDice, unknownCount, alreadyHave, needed, targetIsWildable };
+            }
+            const pSingle = targetIsWildable ? 2 / 6 : 1 / 6;
+            let probLess = 0;
+            for (let k = 0; k < needed; k++) {
+                probLess += binom(unknownCount, k) * Math.pow(pSingle, k) * Math.pow(1 - pSingle, unknownCount - k);
+            }
+            return {
+                probability: Math.max(0, Math.min(1, 1 - probLess)),
+                totalDice,
+                unknownCount,
+                alreadyHave,
+                needed,
+                targetIsWildable,
+                pSingle,
+            };
         }
 
+        // ----- 建议生成 -----
         function generateAdvice(prob) {
             const pct = (prob.probability * 100).toFixed(0);
             if (bidMode === 'mine') {
@@ -1118,8 +861,15 @@
             }
         }
 
+        // ----- 推荐下一步叫骰 -----
         function suggestNextBids() {
             const totalDice = playerCount * dicePerPlayer;
+            const knownCounts = {};
+            for (let f = 1; f <= 6; f++) knownCounts[f] = 0;
+            myDice.forEach(v => { if (v > 0) knownCounts[v]++; });
+            const knownDiceCount = myDice.filter(v => v > 0).length;
+            const unknownCount = totalDice - knownDiceCount;
+
             const candidates = [];
             const bumps = [
                 { count: currentBid.count + 1, face: currentBid.face },
@@ -1128,12 +878,33 @@
             for (let f = currentBid.face + 1; f <= 6; f++) {
                 bumps.push({ count: currentBid.count, face: f });
             }
+
             bumps.forEach(bid => {
                 if (bid.count > totalDice || bid.face < 1 || bid.face > 6) return;
-                const p = calcProbability(bid, myDice).probability;
+                const targetIsWildable = wildOnes && bid.face !== 1;
+                let already = knownCounts[bid.face] || 0;
+                if (targetIsWildable) already += knownCounts[1] || 0;
+                const needed = bid.count - already;
+                let p;
+                if (needed <= 0) {
+                    p = 1;
+                } else if (needed > unknownCount) {
+                    p = 0;
+                } else {
+                    const pSingle = targetIsWildable ? 2 / 6 : 1 / 6;
+                    let probLess = 0;
+                    for (let k = 0; k < needed; k++) {
+                        probLess += binom(unknownCount, k) * Math.pow(pSingle, k) * Math.pow(1 - pSingle, unknownCount - k);
+                    }
+                    p = Math.max(0, Math.min(1, 1 - probLess));
+                }
                 candidates.push({ ...bid, p });
             });
-            return candidates.filter(c => c.p >= 0.5).sort((a, b) => b.p - a.p).slice(0, 3);
+
+            return candidates
+                .filter(c => c.p >= 0.5)
+                .sort((a, b) => b.p - a.p)
+                .slice(0, 3);
         }
 
         function renderNextBids(prob) {
@@ -1142,7 +913,10 @@
                 return;
             }
             const options = suggestNextBids();
-            if (options.length === 0) { nextBidRow.innerHTML = ''; return; }
+            if (options.length === 0) {
+                nextBidRow.innerHTML = '';
+                return;
+            }
             nextBidRow.innerHTML = options.map(o =>
                 `<button class="next-bid-chip" data-count="${o.count}" data-face="${o.face}">我叫 ${o.count}个${o.face} · ${Math.round(o.p*100)}%</button>`
             ).join('');
@@ -1155,6 +929,7 @@
             });
         }
 
+        // ----- 主分析函数 -----
         function analyze() {
             const count = parseInt(bidCountInput.value, 10);
             const face = parseInt(bidFaceInput.value, 10);
@@ -1166,7 +941,10 @@
             else if (count < 1) err = '数量至少为 1';
             else if (count > totalDice) err = `全场只有 ${totalDice} 颗骰子`;
             errorMsg.textContent = err || '';
-            if (err) { adviceBtn.disabled = true; return; }
+            if (err) {
+                adviceBtn.disabled = true;
+                return;
+            }
 
             currentBid = { count, face };
             renderDice();
@@ -1264,7 +1042,10 @@
 
         function renderMyRecord() {
             const total = myRecord.wins + myRecord.losses;
-            if (total === 0) { myRecordText.textContent = '暂无记录'; return; }
+            if (total === 0) {
+                myRecordText.textContent = '暂无记录';
+                return;
+            }
             const rate = Math.round((myRecord.wins / total) * 100);
             myRecordText.textContent = `${myRecord.wins}胜 ${myRecord.losses}负 · 胜率 ${rate}%`;
         }
@@ -1294,349 +1075,20 @@
         function logResult(isBluff) {
             const opp = opponents.find(o => String(o.id) === String(selectedOpponentId));
             if (!opp) return;
-            if (isBluff) { opp.bluffCount++; myRecord.wins++; }
-            else { opp.honestCount++; myRecord.losses++; }
+            if (isBluff) {
+                opp.bluffCount++;
+                myRecord.wins++;
+            } else {
+                opp.honestCount++;
+                myRecord.losses++;
+            }
             renderMyRecord();
             renderOpponentList();
             updateOpponentHint();
         }
 
         // ============================================================
-        //  ============ 极简模式逻辑 ============
-        // ============================================================
-
-        const mDiceGrid = document.getElementById('mDiceGrid');
-        const mDiceCountBadge = document.getElementById('mDiceCountBadge');
-        const mBidCount = document.getElementById('mBidCount');
-        const mBidFace = document.getElementById('mBidFace');
-        const mBidDisplay = document.getElementById('mBidDisplay');
-        const mResultList = document.getElementById('mResultList');
-        const mApplyBtn = document.getElementById('mApplyBtn');
-        const mStrategyLabel = document.getElementById('mStrategyLabel');
-
-        const STRATEGY_NAMES = { sage: '贤者模式', saint: '圣人模式', split: '劈模式' };
-
-        function renderMinimalDice() {
-            let html = '';
-            for (let i = 0; i < dicePerPlayer; i++) {
-                const val = minimalDice[i] || 0;
-                const selected = val > 0;
-                const display = selected ? FACE_ICONS[val] : '?';
-                const cls = selected ? 'filled selected' : '';
-                html += `<button class="dice-btn ${cls}" data-index="${i}">${display}</button>`;
-            }
-            mDiceGrid.innerHTML = html;
-            mDiceGrid.querySelectorAll('.dice-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const idx = parseInt(this.dataset.index);
-                    const current = minimalDice[idx] || 0;
-                    minimalDice[idx] = current >= 6 ? 0 : current + 1;
-                    renderMinimalDice();
-                    analyzeMinimal();
-                });
-            });
-            const filled = minimalDice.filter(v => v > 0).length;
-            mDiceCountBadge.textContent = `${filled} / ${dicePerPlayer}`;
-        }
-
-        function clampMinimalBidInputs() {
-            const totalDice = playerCount * dicePerPlayer;
-            mBidCount.max = totalDice;
-            let c = parseInt(mBidCount.value, 10);
-            if (!isNaN(c)) {
-                c = Math.max(1, Math.min(totalDice, c));
-                mBidCount.value = c;
-            }
-            let f = parseInt(mBidFace.value, 10);
-            if (!isNaN(f)) {
-                f = Math.max(1, Math.min(6, f));
-                mBidFace.value = f;
-            }
-            document.getElementById('mCountUp').disabled = c >= totalDice;
-            document.getElementById('mCountDown').disabled = c <= 1;
-            document.getElementById('mFaceUp').disabled = f >= 6;
-            document.getElementById('mFaceDown').disabled = f <= 1;
-            mBidDisplay.textContent = `${c} 个 ${f} 点`;
-        }
-
-        function stepMinimalBid(input, delta, min, max) {
-            let v = parseInt(input.value, 10);
-            if (isNaN(v)) v = min;
-            v = Math.max(min, Math.min(max, v + delta));
-            input.value = v;
-            clampMinimalBidInputs();
-            analyzeMinimal();
-        }
-
-        // 生成下一手叫骰的候选
-        function generateMinimalCandidates() {
-            const totalDice = playerCount * dicePerPlayer;
-            const { count, face } = minimalBid;
-            const candidates = [];
-            // 数量增加
-            for (let c = count + 1; c <= Math.min(count + 3, totalDice); c++) {
-                const bid = { count: c, face };
-                const p = calcProbability(bid, minimalDice).probability;
-                candidates.push({ ...bid, p });
-            }
-            // 点数增加（数量相同）
-            for (let f = face + 1; f <= 6; f++) {
-                const bid = { count, face: f };
-                const p = calcProbability(bid, minimalDice).probability;
-                candidates.push({ ...bid, p });
-                // 也考虑数量+1 + 点数增加
-                if (count + 1 <= totalDice) {
-                    const bid2 = { count: count + 1, face: f };
-                    const p2 = calcProbability(bid2, minimalDice).probability;
-                    candidates.push({ ...bid2, p: p2 });
-                }
-            }
-            return candidates;
-        }
-
-        function analyzeMinimal() {
-            clampMinimalBidInputs();
-
-            const hasDice = minimalDice.some(v => v > 0);
-            if (!hasDice) {
-                mResultList.innerHTML = '<div class="minimal-tip">选择骰子后自动计算</div>';
-                mApplyBtn.disabled = true;
-                currentRecommendation = null;
-                return;
-            }
-
-            const currentBidData = { count: minimalBid.count, face: minimalBid.face };
-            const currentP = calcProbability(currentBidData, minimalDice).probability;
-            const openWinP = 1 - currentP; // 开牌胜率
-
-            const candidates = generateMinimalCandidates();
-
-            // 找最安全的叫骰（P最高）
-            const safest = [...candidates].sort((a, b) => b.p - a.p)[0];
-            // 找最冒险的叫骰（P 接近 0.5 但 >= 0.35，代表有挑战性但仍有胜算）
-            const mostRisky = [...candidates]
-                .filter(c => c.p >= 0.35 && c.p <= 0.65)
-                .sort((a, b) => Math.abs(a.p - 0.5) - Math.abs(b.p - 0.5))[0]
-                || [...candidates].sort((a, b) => Math.abs(a.p - 0.5) - Math.abs(b.p - 0.5))[0];
-
-            // 组装三种推荐
-            const recs = { safe: null, risky: null, open: null };
-
-            // 最安全叫法
-            if (safest) {
-                recs.safe = {
-                    type: 'bid',
-                    bid: safest,
-                    pct: Math.round(safest.p * 100),
-                    p: safest.p,
-                };
-            }
-
-            // 最冒险叫法
-            if (mostRisky) {
-                recs.risky = {
-                    type: 'bid',
-                    bid: mostRisky,
-                    pct: Math.round(mostRisky.p * 100),
-                    p: mostRisky.p,
-                };
-            }
-
-            // 开牌
-            recs.open = {
-                type: 'open',
-                pct: Math.round(openWinP * 100),
-                p: openWinP,
-            };
-
-            // 根据策略模式选择推荐
-            let recommended = null;
-            if (minimalStrategy === 'sage') {
-                // 贤者：安全优先
-                if (openWinP >= 0.55) {
-                    recommended = { ...recs.open, label: '开牌' };
-                } else if (safest && safest.p >= 0.5) {
-                    recommended = { ...recs.safe, label: `叫 ${safest.count}个${safest.face}` };
-                } else {
-                    recommended = { ...recs.open, label: '开牌' };
-                }
-            } else if (minimalStrategy === 'saint') {
-                // 圣人：冒险×胜率最大
-                if (mostRisky) {
-                    recommended = { ...recs.risky, label: `叫 ${mostRisky.count}个${mostRisky.face}` };
-                } else if (safest) {
-                    recommended = { ...recs.safe, label: `叫 ${safest.count}个${safest.face}` };
-                }
-            } else if (minimalStrategy === 'split') {
-                // 劈：开牌胜率优先
-                if (openWinP >= 0.4) {
-                    recommended = { ...recs.open, label: '开牌' };
-                } else if (safest) {
-                    recommended = { ...recs.safe, label: `叫 ${safest.count}个${safest.face}` };
-                }
-            }
-
-            currentRecommendation = recommended;
-
-            // 渲染结果
-            renderMinimalResults(recs, recommended);
-
-            mApplyBtn.disabled = !recommended || recommended.type !== 'bid';
-        }
-
-        function renderMinimalResults(recs, recommended) {
-            const pctClass = p => p >= 0.6 ? 'safe' : p >= 0.35 ? 'medium' : 'danger';
-
-            let html = '';
-
-            // 最安全
-            if (recs.safe) {
-                const isBest = recommended && recommended.type === 'bid' && recommended.bid.count === recs.safe.bid.count && recommended.bid.face === recs.safe.bid.face;
-                html += `
-                    <div class="result-item ${isBest ? 'best' : ''}">
-                        <span class="r-emoji">🛡</span>
-                        <div class="r-info">
-                            <div class="r-label">最安全</div>
-                            <div class="r-action">叫 ${recs.safe.bid.count}个${recs.safe.bid.face}</div>
-                        </div>
-                        <span class="r-pct ${pctClass(recs.safe.p)}">${recs.safe.pct}%</span>
-                    </div>
-                `;
-            }
-
-            // 最冒险
-            if (recs.risky && recs.risky.bid) {
-                const isBest = recommended && recommended.type === 'bid' && recommended.bid.count === recs.risky.bid.count && recommended.bid.face === recs.risky.bid.face;
-                const sameAsSafe = recs.safe && recs.risky.bid.count === recs.safe.bid.count && recs.risky.bid.face === recs.safe.bid.face;
-                if (!sameAsSafe) {
-                    html += `
-                        <div class="result-item ${isBest ? 'best' : ''}">
-                            <span class="r-emoji">⚔</span>
-                            <div class="r-info">
-                                <div class="r-label">最冒险</div>
-                                <div class="r-action">叫 ${recs.risky.bid.count}个${recs.risky.bid.face}</div>
-                            </div>
-                            <span class="r-pct ${pctClass(recs.risky.p)}">${recs.risky.pct}%</span>
-                        </div>
-                    `;
-                }
-            }
-
-            // 开牌
-            const isOpenBest = recommended && recommended.type === 'open';
-            html += `
-                <div class="result-item ${isOpenBest ? 'best' : ''}">
-                    <span class="r-emoji">🎯</span>
-                    <div class="r-info">
-                        <div class="r-label">开牌胜率</div>
-                        <div class="r-action">开牌</div>
-                    </div>
-                    <span class="r-pct ${pctClass(recs.open.p)}">${recs.open.pct}%</span>
-                </div>
-            `;
-
-            // 推荐
-            if (recommended) {
-                html += `
-                    <div class="result-item best" style="margin-top:6px;background:#dbeafe;">
-                        <span class="r-emoji">✨</span>
-                        <div class="r-info">
-                            <div class="r-label">${STRATEGY_NAMES[minimalStrategy]} 推荐</div>
-                            <div class="r-action">${recommended.label}</div>
-                        </div>
-                        <span class="r-pct ${pctClass(recommended.p)}">${recommended.pct}%</span>
-                    </div>
-                `;
-            }
-
-            mResultList.innerHTML = html;
-        }
-
-        // ============================================================
-        //  模式切换
-        // ============================================================
-        const modeSwitch = document.getElementById('modeSwitch');
-        const normalModeEl = document.getElementById('normalMode');
-        const minimalModeEl = document.getElementById('minimalMode');
-        const headerSub = document.getElementById('headerSub');
-        let isMinimalMode = false;
-
-        modeSwitch.addEventListener('click', function() {
-            isMinimalMode = !isMinimalMode;
-            if (isMinimalMode) {
-                normalModeEl.style.display = 'none';
-                minimalModeEl.style.display = 'block';
-                modeSwitch.textContent = '🎯 完整模式';
-                headerSub.textContent = '极简模式 · 快速决策';
-                renderMinimalDice();
-                clampMinimalBidInputs();
-                analyzeMinimal();
-            } else {
-                normalModeEl.style.display = 'block';
-                minimalModeEl.style.display = 'none';
-                modeSwitch.textContent = '⚡ 极简模式';
-                headerSub.textContent = '输入你的骰子，评估叫骰胜率';
-            }
-        });
-
-        // ============================================================
-        //  极简模式事件绑定
-        // ============================================================
-        mBidCount.addEventListener('change', function() { clampMinimalBidInputs(); analyzeMinimal(); });
-        mBidFace.addEventListener('change', function() { clampMinimalBidInputs(); analyzeMinimal(); });
-        document.getElementById('mCountUp').addEventListener('click', function() {
-            stepMinimalBid(mBidCount, 1, 1, playerCount * dicePerPlayer);
-        });
-        document.getElementById('mCountDown').addEventListener('click', function() {
-            stepMinimalBid(mBidCount, -1, 1, playerCount * dicePerPlayer);
-        });
-        document.getElementById('mFaceUp').addEventListener('click', function() {
-            stepMinimalBid(mBidFace, 1, 1, 6);
-        });
-        document.getElementById('mFaceDown').addEventListener('click', function() {
-            stepMinimalBid(mBidFace, -1, 1, 6);
-        });
-
-        document.getElementById('mClearDiceBtn').addEventListener('click', function() {
-            minimalDice = new Array(dicePerPlayer).fill(0);
-            renderMinimalDice();
-            analyzeMinimal();
-        });
-        document.getElementById('mRandomDiceBtn').addEventListener('click', function() {
-            minimalDice = minimalDice.map(() => Math.floor(Math.random() * 6) + 1);
-            renderMinimalDice();
-            analyzeMinimal();
-        });
-
-        // 策略模式按钮
-        document.querySelectorAll('.strategy-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.strategy-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                minimalStrategy = this.dataset.strategy;
-                mStrategyLabel.textContent = STRATEGY_NAMES[minimalStrategy];
-                analyzeMinimal();
-            });
-        });
-
-        // 应用到叫骰
-        mApplyBtn.addEventListener('click', function() {
-            if (!currentRecommendation || currentRecommendation.type !== 'bid') return;
-            const { count, face } = currentRecommendation.bid;
-            // 切换到正常模式，并填入推荐值
-            if (isMinimalMode) {
-                modeSwitch.click();
-            }
-            bidCountInput.value = count;
-            bidFaceInput.value = face;
-            clampBidInputs();
-            analyze();
-            // 滚到评估卡片
-            document.querySelector('.result-area').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-
-        // ============================================================
-        //  正常模式事件绑定
+        //  事件绑定
         // ============================================================
 
         document.getElementById('playerCount').addEventListener('change', updateSettings);
@@ -1727,7 +1179,6 @@
         //  初始化
         // ============================================================
         function init() {
-            // 正常模式
             myDice = new Array(dicePerPlayer).fill(0);
             renderDice();
             initOpponents();
@@ -1736,12 +1187,6 @@
             resetResult();
             opponentSelectRow.style.display = 'flex';
             document.getElementById('modeOpponent').classList.add('active');
-
-            // 极简模式
-            minimalDice = new Array(dicePerPlayer).fill(0);
-            renderMinimalDice();
-            clampMinimalBidInputs();
-            analyzeMinimal();
         }
 
         init();
